@@ -22,6 +22,8 @@
 #include "i386-io-windows.h"
 #elif defined(PCI_OS_CYGWIN)
 #include "i386-io-cygwin.h"
+#elif defined(PCI_OS_AKAROS)
+#include "i386-io-akaros.h"
 #else
 #error Do not know how to access I/O ports on this OS.
 #endif

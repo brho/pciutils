@@ -124,6 +124,18 @@ case $sys in
 		echo >>$c '#define PCI_HAVE_PM_INTEL_CONF'
 		echo >>$m 'WITH_LIBS+=-lioperm'
 		;;
+	akaros)
+		echo_n " i386-ports"
+		echo >>$c '#define PCI_HAVE_PM_INTEL_CONF'
+		ZLIB=no
+		export ZLIB
+		DNS=no
+		export DNS
+		SHARED=no
+		export SHARED
+		IDSDIR="/"
+		export IDSDIR
+		;;
         *)
 		echo " Unfortunately, your OS is not supported by the PCI Library"
 		exit 1
