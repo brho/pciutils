@@ -1,6 +1,4 @@
-/* Akaros support, need to bind -b '#P' /prog to enable access to
- * iob/w/l interfaces
- */
+/* Akaros support */
 
 #include <sys/types.h>
 #include <sys/stat.h>
@@ -12,9 +10,9 @@ static int iol = -1;
 static int
 intel_setup_io(struct pci_access *a UNUSED)
 {
-	iol = open("/prog/iol", O_RDWR);
-	iow = open("/prog/iow", O_RDWR);
-	iob = open("/prog/iob", O_RDWR);
+	iol = open("#P/iol", O_RDWR);
+	iow = open("#P/iow", O_RDWR);
+	iob = open("#P/iob", O_RDWR);
 	if (iob == -1 || iow == -1 || iol == -1) {
 		if (iob != -1)
 			close(iob);
