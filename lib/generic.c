@@ -19,7 +19,8 @@ pci_generic_scan_bus(struct pci_access *a, byte *busmap, int bus)
   a->debug("Scanning bus %02x for devices...\n", bus);
   if (busmap[bus])
     {
-      a->warning("Bus %02x seen twice (firmware bug). Ignored.", bus);
+      /* skip this, due to brute forcing */
+      //a->warning("Bus %02x seen twice (firmware bug). Ignored.", bus);
       return;
     }
   busmap[bus] = 1;
@@ -69,9 +70,11 @@ void
 pci_generic_scan(struct pci_access *a)
 {
   byte busmap[256];
+  int bus;
 
   memset(busmap, 0, sizeof(busmap));
-  pci_generic_scan_bus(a, busmap, 0);
+  for (bus = 0; bus < 256; bus++)
+  	pci_generic_scan_bus(a, busmap, bus);
 }
 
 int
