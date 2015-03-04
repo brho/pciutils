@@ -8,9 +8,9 @@ VERSION=3.1.4
 DATE=2009-08-14
 
 # Host OS and release (override if you are cross-compiling)
-HOST=
+HOST=akaros
 RELEASE=
-CROSS_COMPILE=
+CROSS_COMPILE=x86_64-ucb-akaros-
 
 # Support for compressed pci.ids (yes/no, default: detect)
 ZLIB=

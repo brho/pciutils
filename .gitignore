@@ -1,0 +1,14 @@
+*.o
+example
+lib/config.mk
+lib/libpci.a
+lib/libpci.pc
+lspci
+lspci.8
+pci.ids.gz
+pcilib.7
+setpci
+setpci.8
+update-pciids
+update-pciids.8
+lib/config.h
