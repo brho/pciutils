@@ -127,6 +127,7 @@ case $sys in
 	akaros)
 		echo_n " i386-ports"
 		echo >>$c '#define PCI_HAVE_PM_INTEL_CONF'
+		echo >>$c '#define PCI_HAVE_64BIT_ADDRESS'
 		ZLIB=no
 		export ZLIB
 		DNS=no
