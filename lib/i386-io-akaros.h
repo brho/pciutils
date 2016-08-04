@@ -10,9 +10,9 @@ static int iol = -1;
 static int
 intel_setup_io(struct pci_access *a UNUSED)
 {
-	iol = open("#P/iol", O_RDWR);
-	iow = open("#P/iow", O_RDWR);
-	iob = open("#P/iob", O_RDWR);
+	iol = open("#arch/iol", O_RDWR);
+	iow = open("#arch/iow", O_RDWR);
+	iob = open("#arch/iob", O_RDWR);
 	if (iob == -1 || iow == -1 || iol == -1) {
 		if (iob != -1)
 			close(iob);
